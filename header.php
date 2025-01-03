@@ -1,3 +1,5 @@
+<?php require_once 'variables.php';?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -28,3 +30,7 @@
       </div>
     </nav>
     <div class="container my-5">
+      <?php if(isset($_SESSION['LOGGED_USER'])) :?>
+        <p><?php var_dump($_COOKIE)?></p>
+        <p><?php echo 'bonjour ' . $_SESSION['LOGGED_USER']['email']?></p>
+      <?php endif; ?>

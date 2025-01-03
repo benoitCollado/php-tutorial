@@ -12,4 +12,11 @@ if(!function_exists('nav_item')){
 HTML; 
 }
 }
+
+if(!function_exists('redirectToUrl')){
+  function redirectToUrl(String $lien):never{
+    header("Location: $lien");
+    exit();
+  }
+}
 ?>
