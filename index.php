@@ -1,4 +1,4 @@
-<?php session_start();?>
+<?php require 'session.php';?>
 <?php $title = 'Page d\'Acceuil'; ?>
 
 <?php require 'header.php'; ?>

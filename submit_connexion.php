@@ -1,5 +1,5 @@
 <?php 
-session_start();
+require 'session.php';
 require_once 'functions.php';
 require_once 'variables.php';
 
@@ -15,6 +15,12 @@ if(isset($postData['email']) && isset($postData['password'])){
           'email' => $user['email'],
           'user_id' => $user['user_id']
           ];
+        setcookie('LOGGED_USER',
+         $user['email'], [
+                  'expires'=> time() + (60*60),
+                  'secure' => true,
+                  'httponly'=> true,
+         ]);
       }
     }
   
@@ -25,6 +31,7 @@ if(isset($postData['email']) && isset($postData['password'])){
       
     }
   }
+ 
   redirectToUrl('index.php');
 }
 ?>

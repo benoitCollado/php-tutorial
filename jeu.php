@@ -1,4 +1,4 @@
-<?php session_start();?>
+<?php require 'session.php';?>
 <? $title = 'Jeu'; ?>
 
 <?php require 'header.php'; ?>

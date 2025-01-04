@@ -1,4 +1,4 @@
-<?php session_start();?>
+<?php require 'session.php';?>
 <?php if(isset($_POST['email']) && isset($_POST['password'])){
   $userlogin = $_POST;
   header('Location: /index.php', true, 302);

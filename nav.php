@@ -7,5 +7,6 @@
 <?= nav_item('/jeu.php', 'Jeu'); ?> 
 <?=  nav_item('/contact.php', 'Contact'); ?>
 <?= nav_item('/connexion.php', 'Connexion'); ?>
-
-<?php
+<?php if(isset($_SESSION['LOGGED_USER'])) :?>
+  <?= nav_item('/deconnexion.php', 'Déconnexion'); ?>
+<?php endif; ?>

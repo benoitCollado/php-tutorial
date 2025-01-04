@@ -6,6 +6,13 @@
           'password' => 'devine',
           'user_id' => 1,
       ],
+        [
+      'full_name' => 'Mickaël Andrieu',
+      'email' => 'benoit@suez.fr',
+      'age' => 34,
+      'password' => 'paspossible',
+      'user_id' => 1,
+        ],
       [
           'full_name' => 'Mathieu Nebra',
           'email' => 'mathieu.nebra@exemple.com',
