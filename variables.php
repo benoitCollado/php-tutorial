@@ -10,8 +10,8 @@
       'full_name' => 'Mickaël Andrieu',
       'email' => 'benoit@suez.fr',
       'age' => 34,
-      'password' => 'paspossible',
-      'user_id' => 1,
+      'password' => 'motdepasse',
+      'user_id' => 4,
         ],
       [
           'full_name' => 'Mathieu Nebra',

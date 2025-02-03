@@ -9,14 +9,21 @@ if(isset($postData['email']) && isset($postData['password'])){
   if(!filter_var($postData['email'], FILTER_VALIDATE_EMAIL)){
     $_SESSION['LOGIN_ERROR_MESSAGE'] = 'Veuillez entrer un email valide';
   }else{
-    foreach($users as $user){
-      if($user['email'] === $postData['email'] && $user['password'] === $postData['password']){
-        $_SESSION['LOGGED_USER'] =[ 
-          'email' => $user['email'],
-          'user_id' => $user['user_id']
-          ];
-        setcookie('LOGGED_USER',
-         $user['email'], [
+
+    try{
+      $user = getUser($postData['email']);
+    }
+    catch (Exception $e)
+    {
+      $_SESSION['LOGIN_ERROR_MESSAGE'] = $e->getMessage();
+    }
+    if($user[0]['email'] === $postData['email'] && $user[0]['password'] === $postData['password']){
+      $_SESSION['LOGGED_USER'] =[ 
+        'email' => $user[0]['email'],
+        'user_id' => $user[0]['index']
+        ];
+      setcookie('LOGGED_USER',
+      $user[0]['email'], [
                   'expires'=> time() + (60*60),
                   'secure' => true,
                   'httponly'=> true,
@@ -33,5 +40,5 @@ if(isset($postData['email']) && isset($postData['password'])){
   }
  
   redirectToUrl('index.php');
-}
+
 ?>
